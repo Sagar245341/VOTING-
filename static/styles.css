@@ -37,6 +37,8 @@ body::before {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(219, 225, 216, 0.8);
 }
 .brand {
   display: flex;
@@ -77,14 +79,24 @@ body::before {
 }
 .results-link,
 .back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 13px;
   color: var(--green);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 254, 249, 0.72);
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
+  transition: 0.2s ease;
 }
 .results-link:hover,
 .back-link:hover {
-  color: var(--orange);
+  color: var(--ink);
+  border-color: var(--green);
+  background: var(--lime);
 }
 .status i {
   width: 7px;
@@ -97,7 +109,7 @@ body::before {
   display: flex;
   justify-content: space-between;
   align-items: end;
-  padding: 106px 0 66px;
+  padding: 92px 0 58px;
 }
 .eyebrow {
   margin: 0 0 17px;
@@ -133,11 +145,20 @@ h1 em {
   gap: 18px;
 }
 .poll-card {
+  position: relative;
   padding: 28px;
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 14px;
+  box-shadow: 0 16px 34px rgba(23, 35, 31, 0.055);
   animation: rise 0.55s ease both;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.poll-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 38px rgba(23, 35, 31, 0.1);
 }
 .poll-card:nth-child(2) {
   animation-delay: 0.1s;
@@ -192,6 +213,13 @@ h2 {
   border-radius: 7px;
   cursor: pointer;
   font-size: 13px;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+.option-row:hover {
+  border-color: #a9bcae;
+  background: #fbfcf8;
 }
 .option-row input {
   position: absolute;
@@ -264,6 +292,13 @@ button {
     700 12px "DM Sans",
     sans-serif;
   white-space: nowrap;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+button:hover {
+  background: #26705c;
+  transform: translateY(-1px);
 }
 button span {
   margin-left: 8px;
@@ -279,6 +314,7 @@ button span {
   background: var(--green);
   color: var(--white);
   border-radius: 14px;
+  box-shadow: 0 20px 42px rgba(27, 89, 72, 0.16);
 }
 .create-panel .eyebrow {
   color: var(--lime);
@@ -310,6 +346,9 @@ button span {
   padding: 12px 16px;
   color: var(--ink);
   background: var(--lime);
+}
+.create-button:hover {
+  background: #e5fb8c;
 }
 .create-button span {
   color: var(--green);

@@ -70,6 +70,22 @@ body::before {
   font-size: 12px;
   font-weight: 600;
 }
+.topbar-actions {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.results-link,
+.back-link {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.results-link:hover,
+.back-link:hover {
+  color: var(--orange);
+}
 .status i {
   width: 7px;
   height: 7px;
@@ -374,5 +390,104 @@ button span {
   }
   h1 {
     letter-spacing: -2px;
+  }
+}
+.results-intro {
+  padding: 105px 0 52px;
+}
+.results-intro h1 {
+  margin: 0;
+}
+.results-intro > p:last-child {
+  max-width: 340px;
+  margin-top: 24px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.results-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.result-card {
+  padding: 28px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  animation: rise 0.55s ease both;
+}
+.result-card h2 {
+  margin-top: 17px;
+}
+.result-card > p {
+  min-height: 42px;
+  margin: 12px 0 25px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.result-card-head,
+.result-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+}
+.result-options {
+  display: grid;
+  gap: 16px;
+}
+.result-label {
+  font-size: 13px;
+}
+.result-label strong {
+  color: var(--green);
+  font-size: 14px;
+}
+.result-track {
+  height: 8px;
+  margin: 7px 0 5px;
+  overflow: hidden;
+  background: #e8ece5;
+  border-radius: 5px;
+}
+.result-track span {
+  display: block;
+  height: 100%;
+  background: var(--lime);
+  border-radius: inherit;
+}
+.result-option.leader .result-track span {
+  background: var(--green);
+}
+.result-option small {
+  color: var(--muted);
+  font-size: 10px;
+}
+.leading-choice {
+  margin-top: 25px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+}
+.leading-choice strong {
+  color: var(--green);
+}
+@media (max-width: 720px) {
+  .topbar-actions {
+    gap: 12px;
+  }
+  .status {
+    font-size: 0;
+  }
+  .status i {
+    font-size: initial;
+  }
+  .results-list {
+    grid-template-columns: 1fr;
+  }
+  .results-intro {
+    padding: 80px 0 42px;
   }
 }

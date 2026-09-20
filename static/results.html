@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results | Pulse Vote</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell results-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Pulse Vote home"
+          ><span class="brand-mark">P</span
+          ><span>pulse<span class="brand-dot">.</span></span></a
+        >
+        <a class="back-link" href="/">← Back to voting</a>
+      </header>
+      <section class="results-intro">
+        <p class="eyebrow">THE ROOM HAS SPOKEN</p>
+        <h1>Poll <em>results.</em></h1>
+        <p>
+          See the latest totals and leading choices across every active poll.
+        </p>
+      </section>
+      <section id="results-list" class="results-list" aria-live="polite">
+        <div class="loading">Gathering the results<span>...</span></div>
+      </section>
+    </main>
+    <script src="/static/results.js"></script>
+  </body>
+</html>

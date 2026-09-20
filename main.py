@@ -124,11 +124,21 @@ async def home() -> FileResponse:
     return FileResponse(BASE_DIR / "static" / "index.html")
 
 
+@app.get("/results", include_in_schema=False)
+async def results_page() -> FileResponse:
+    return FileResponse(BASE_DIR / "static" / "results.html")
+
+
 @app.get("/api/polls")
 def list_polls() -> list[dict]:
     with get_connection() as connection:
         polls = connection.execute("SELECT * FROM polls ORDER BY id DESC").fetchall()
         return [poll_payload(connection, poll) for poll in polls]
+
+
+@app.get("/api/results")
+def list_results() -> list[dict]:
+    return list_polls()
 
 
 @app.post("/api/polls", status_code=201)

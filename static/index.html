@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulse Vote</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Pulse Vote home"
+          ><span class="brand-mark">P</span
+          ><span>pulse<span class="brand-dot">.</span></span></a
+        >
+        <span class="status"><i></i> Live voting room</span>
+      </header>
+
+      <section class="intro">
+        <div>
+          <p class="eyebrow">MAKE YOUR VOICE COUNT</p>
+          <h1>Small choices.<br /><em>Real momentum.</em></h1>
+        </div>
+        <p class="intro-copy">
+          Cast your vote, see the room move, and keep decisions wonderfully
+          simple.
+        </p>
+      </section>
+
+      <section id="poll-list" class="poll-list" aria-live="polite">
+        <div class="loading">Loading the room<span>...</span></div>
+      </section>
+
+      <section class="create-panel">
+        <div>
+          <p class="eyebrow">START A NEW QUESTION</p>
+          <h2>What should we decide next?</h2>
+        </div>
+        <form id="create-form">
+          <input
+            name="question"
+            required
+            minlength="5"
+            maxlength="200"
+            placeholder="Ask your team something..."
+          />
+          <input
+            name="description"
+            maxlength="500"
+            placeholder="Add a little context (optional)"
+          />
+          <div class="option-inputs">
+            <input name="option" required placeholder="Option one" />
+            <input name="option" required placeholder="Option two" />
+            <input name="option" placeholder="Option three (optional)" />
+          </div>
+          <button class="create-button" type="submit">
+            Create poll <span>+</span>
+          </button>
+          <p class="form-message" id="form-message"></p>
+        </form>
+      </section>
+    </main>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
